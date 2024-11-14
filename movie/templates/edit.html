@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container mt-5">
+
+        <form method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+
+<!--            <div class="mb-3">-->
+<!--                <label class="form-label">Title</label>-->
+<!--                <input type="text" class="form-control" name="t" value="{{movie.title}}" placeholder="Enter title">-->
+<!--            </div>-->
+
+
+<!--            <div class="mb-3">-->
+<!--                <label class="form-label">Description</label>-->
+<!--                <textarea class="form-control" name="d" rows="3" placeholder="Enter description">{{movie.description}}</textarea>-->
+<!--            </div>-->
+
+
+<!--            <div class="mb-3">-->
+<!--                <label  class="form-label">Year</label>-->
+<!--                <input type="number" class="form-control" name="y" value="{{movie.year}}" placeholder="Enter year" min="1900" max="2100">-->
+<!--            </div>-->
+
+
+<!--             <div class="mb-3">-->
+<!--                <label class="form-label">Language</label>-->
+<!--                <input type="text" class="form-control" name="l" value="{{movie.language}}" placeholder="Enter Language">-->
+<!--            </div>-->
+
+
+<!--            <div class="mb-3">-->
+<!--                <label class="form-label">Upload Image</label>-->
+<!--                <img src="{{movie.image.url}}" style="height:100px;">-->
+<!--                <input class="form-control" type="file" name="i">-->
+<!--            </div>-->
+
+              <table>
+                {{form.as_table}}
+            </table>
+
+
+            <button type="submit" value="Add" class="btn btn-dark">Submit</button>
+        </form>
+    </div>
+
+
+{% endblock %}

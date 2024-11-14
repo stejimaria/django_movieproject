@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="row mt-5">
+        {% for i in movie %}
+        <div class="col-sm-4">
+            <div class="card mx-auto mb-5" style="width: 18rem;">
+                {% if i.image %}
+                    <img src="{{ i.image.url }}" class="card-img-top" height="350px" width="100%" alt="...">
+                {% else %}
+                    <img src="{% static 'default_image.jpg' %}" class="card-img-top" height="350px" width="100%" alt="No image available">
+                {% endif %}
+                <div class="card-body bg-warning text-dark text-center">
+                    <h5 class="card-title">{{ i.title }}</h5>
+                    <p class="card-text">{{ i.year }}</p>
+                    <a href="{% url 'app1:detail' i.id %}" class="btn text-light" style="background-color:#001D3D;">details</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+<!--        {{name}} {{age}}-->
+    </div>
+</div>
+{% endblock %}

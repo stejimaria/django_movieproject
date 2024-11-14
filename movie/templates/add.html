@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<h2 class="text-center mt-4on ">Add Movies</h2>
+
+
+
+<div class="container mt-5">
+
+        <form method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+<!--            &lt;!&ndash; Title Field &ndash;&gt;-->
+<!--            <div class="mb-3">-->
+<!--                <label class="form-label">Title</label>-->
+<!--                <input type="text" class="form-control" name="t" placeholder="Enter title">-->
+<!--            </div>-->
+
+<!--            &lt;!&ndash; Description Field &ndash;&gt;-->
+<!--            <div class="mb-3">-->
+<!--                <label class="form-label">Description</label>-->
+<!--                <textarea class="form-control" name="d" rows="3" placeholder="Enter description"></textarea>-->
+<!--            </div>-->
+
+<!--            &lt;!&ndash; Year Field &ndash;&gt;-->
+<!--            <div class="mb-3">-->
+<!--                <label  class="form-label">Year</label>-->
+<!--                <input type="number" class="form-control" name="y" placeholder="Enter year" min="1900" max="2100">-->
+<!--            </div>-->
+
+<!--            &lt;!&ndash; Language Field &ndash;&gt;-->
+<!--            <div class="mb-3">-->
+<!--                <label class="form-label">Language</label>-->
+<!--                <input type="text" class="form-control" name="l" placeholder="Enter Language">-->
+<!--            </div>-->
+
+<!--            &lt;!&ndash; Image Upload Field &ndash;&gt;-->
+<!--            <div class="mb-3">-->
+<!--                <label class="form-label">Upload Image</label>-->
+<!--                <input class="form-control" type="file" name="i">-->
+<!--            </div>-->
+
+            <table>
+                {{form.as_table}}
+            </table>
+
+
+
+            <!-- Submit Button -->
+            <button type="submit" value="Add" class="btn btn-dark">Submit</button>
+        </form>
+    </div>
+
+
+
+{% endblock %}
